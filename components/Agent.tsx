@@ -45,6 +45,7 @@ const Agent = ({
     };
 
     const onMessage = (message: Message) => {
+      console.log("VAPI Message:", message);
       if (message.type === "transcript" && message.transcriptType === "final") {
         const newMessage = { role: message.role, content: message.transcript };
         setMessages((prev) => [...prev, newMessage]);
